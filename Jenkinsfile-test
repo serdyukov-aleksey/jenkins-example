@@ -5,6 +5,14 @@ pipeline {
             }
       }
     stages {
+        stage('Pre-Build') {
+            steps {
+                echo "Building.."
+                sh '''
+                echo "doing pre-build stuff.."
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
