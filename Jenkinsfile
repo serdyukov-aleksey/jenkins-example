@@ -1,9 +1,5 @@
 pipeline {
-    agent { 
-        docker {
-            image 'python:3.9-slim'
-        }
-      }
+    agent any
     triggers {
         pollSCM '*/1 * * * *'
     }
@@ -13,7 +9,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip install -r requirements.txt
+                python3-pip install -r requirements.txt
                 '''
             }
         }
