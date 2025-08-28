@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent { 
+        node {
+            label 'python-pip'
+            }
+      }
     triggers {
         pollSCM '*/1 * * * *'
     }
@@ -9,7 +13,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                python3-pip install -r requirements.txt
+                pip install -r requirements.txt
                 '''
             }
         }
