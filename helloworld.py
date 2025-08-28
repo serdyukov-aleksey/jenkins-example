@@ -1,2 +1,2 @@
 
-print("Hello ${name}")
+print("Hello wrl")
